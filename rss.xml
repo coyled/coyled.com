@@ -3,10 +3,6 @@ layout: nil
 ---
 <?xml version="1.0"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-
-<!-- RSS as a "standard" is terrible; use Atom.  -coyled -->
-<!-- http://coyled.com/atom.xml -->
-
   <channel>
     <title>coyled.com</title>
     <link>http://coyled.com/</link>
