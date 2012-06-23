@@ -4,10 +4,10 @@ layout: nil
 <?xml version="1.0"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>coyled.com</title>
-    <link>http://coyled.com/</link>
-    <atom:link href="http://coyled.com/rss.xml" rel="self" type="application/rss+xml" />
-    <description>stuff from coyled</description>
+    <title>example.com</title>
+    <link>http://example.com/</link>
+    <atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Your Website</description>
     <language>en-us</language>
     <pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
     <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
@@ -15,10 +15,10 @@ layout: nil
     {% for post in site.posts %}
     <item>
       <title>{{ post.title }}</title>
-      <link>http://coyled.com{{ post.url }}</link>
+      <link>http://example.com{{ post.url }}</link>
       <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-      <author>coyled@coyled.com (Dave Coyle)</author>
-      <guid>http://coyled.com{{ post.id }}</guid>
+      <author>you@example.com (Your Name)</author>
+      <guid>http://example.com{{ post.id }}</guid>
       <description>{{ post.content | xml_escape }}</description>
     </item>
     {% endfor %}
