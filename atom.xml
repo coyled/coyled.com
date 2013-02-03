@@ -18,7 +18,7 @@ layout: nil
   <entry>
     <id>http://example.com{{ post.id }}</id>
     <link type="text/html" rel="alternate" href="http://example.com{{ post.url }}"/>
-    <title>{{ post.title }}</title>
+    <title>{{ post.title | xml_escape }}</title>
     <published>{{ post.date | date_to_xmlschema }}</published>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <author>
