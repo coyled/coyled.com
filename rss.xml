@@ -14,7 +14,7 @@ layout: nil
 
     {% for post in site.posts %}
     <item>
-      <title>{{ post.title }}</title>
+      <title>{{ post.title | xml_escape }}</title>
       <link>http://example.com{{ post.url }}</link>
       <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
       <author>you@example.com (Your Name)</author>
