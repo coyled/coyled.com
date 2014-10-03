@@ -3,10 +3,10 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ site.title | xml_escpae }}</title>
-  <link href="{{ site.baseurl }}"/>
-  <link type="application/atom+xml" rel="self" href="{{ page.url }}"/>
+  <link href="http://{{ site.domain }}{{ site.baseurl }}"/>
+  <link type="application/atom+xml" rel="self" href="http://{{ site.domain }}{{ site.baseurl }}{{ page.url }}"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>{{ site.baseurl }}</id>
+  <id>http://{{ site.domain }}{{ site.baseurl }}/</id>
   <author>
     <name>{{ site.author }}</name>
     <email>{{ site.email }}</email>
@@ -14,14 +14,14 @@
 
   {% for post in site.posts %}
   <entry>
-    <id>{{ site.basurl }}{{ post.id }}</id>
-    <link type="text/html" rel="alternate" href="{{ page.url }}"/>
+    <id>http://{{ site.domain }}{{ site.basurl }}{{ post.id }}</id>
+    <link type="text/html" rel="alternate" href="http://{{ site.domain }}{{ site.baseurl }}{{ post.url }}"/>
     <title>{{ post.title | xml_escape }}</title>
     <published>{{ post.date | date_to_xmlschema }}</published>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <author>
       <name>{{ post.author }}</name>
-      <uri>{{ post.url }}</uri>
+      <uri>http://{{ site.domain }}{{ site.baseurl }}/team/{{ post.author }}</uri>
     </author>
     <content type="html">{{ post.content | xml_escape }}</content>
   </entry>
