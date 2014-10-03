@@ -1,32 +1,29 @@
 ---
-layout: nil
 ---
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
- 
-  <title>Your Website</title>
-  <link href="http://example.com/"/>
-  <link type="application/atom+xml" rel="self" href="http://example.com/atom.xml"/>
+  <title>{{ site.title | xml_escpae }}</title>
+  <link href="{{ site.baseurl }}"/>
+  <link type="application/atom+xml" rel="self" href="{{ page.url }}"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>http://example.com/</id>
+  <id>{{ site.baseurl }}</id>
   <author>
-    <name>Your Name</name>
-    <email>you@example.com</email>
+    <name>{{ site.author }}</name>
+    <email>{{ site.email }}</email>
   </author>
 
   {% for post in site.posts %}
   <entry>
-    <id>http://example.com{{ post.id }}</id>
-    <link type="text/html" rel="alternate" href="http://example.com{{ post.url }}"/>
-    <title>{{ post.title }}</title>
+    <id>{{ site.basurl }}{{ post.id }}</id>
+    <link type="text/html" rel="alternate" href="{{ page.url }}"/>
+    <title>{{ post.title | xml_escape }}</title>
     <published>{{ post.date | date_to_xmlschema }}</published>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <author>
-      <name>Your Name</name>
-      <uri>http://example.com/</uri>
+      <name>{{ post.author }}</name>
+      <uri>{{ post.url }}</uri>
     </author>
     <content type="html">{{ post.content | xml_escape }}</content>
   </entry>
   {% endfor %}
- 
 </feed>

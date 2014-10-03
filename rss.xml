@@ -1,13 +1,16 @@
 ---
-layout: nil
 ---
 <?xml version="1.0"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>example.com</title>
-    <link>http://example.com/</link>
-    <atom:link href="http://example.com/rss.xml" rel="self" type="application/rss+xml" />
-    <description>Your Website</description>
+    <title>{{ site.title }}</title>
+    <link>{{ site.baseurl }}</link>
+    <atom:link href="{{ page.url }}" rel="self" type="application/rss+xml" />
+    {% if site.description %}
+    <description>{{ site.description }}</description>
+    {% else %}
+    <description>{{ site.title }}</description>
+    {% endif %}
     <language>en-us</language>
     <pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
     <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
@@ -15,10 +18,10 @@ layout: nil
     {% for post in site.posts %}
     <item>
       <title>{{ post.title }}</title>
-      <link>http://example.com{{ post.url }}</link>
+      <link>{{ post.url }}</link>
       <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-      <author>you@example.com (Your Name)</author>
-      <guid>http://example.com{{ post.id }}</guid>
+      <author>{{ post.email }} ({{ post.author }})</author>
+      <guid>{{ site.baseurl }}{{ post.id }}</guid>
       <description>{{ post.content | xml_escape }}</description>
     </item>
     {% endfor %}
