@@ -19,3 +19,14 @@ author: BigBlueHat
 email: byoung@bigbluehat.com
 description: Fabulous Site of fabulousness!
 ```
+
+## _data/authors.yml
+
+This file holds author data (shock...), and is used in the `rss.xml` file to
+output email addresses of authors.
+
+## Known Issues
+
+There is a `/team/{{ post.author }}` URL in the `atom.xml`. It's a rash
+assumption that this is where you will put your author pages. It should really
+be configural. Patches welcome! :smiley_cat:
